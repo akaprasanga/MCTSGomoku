@@ -1,7 +1,7 @@
 import logging as log
 import numpy as np
 from gomoku import Gomoku
-from hw2 import MCTS
+from MCTS import MCTS
 
 class NeuralMCTSPlayer():
     def __init__(self, game, n_mcts_per_step):

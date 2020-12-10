@@ -140,7 +140,7 @@ class RandomPlayer():
         return idx[np.random.choice(len(idx))]
 
 
-from hw2 import MCTS
+from MCTS import MCTS
 class NeuralMCTSPlayer():
     def __init__(self, game, n_mcts_per_step):
         self.mcts = MCTS(game)
@@ -160,7 +160,7 @@ if __name__ == "__main__":
     g = Gomoku(11, True)
     # p1 = NeuralMCTSPlayer(g, 100)
     p1 = GUIPlayer(1, g.gui)
-    p2 = NeuralMCTSPlayer(g, 100)
+    p2 = NeuralMCTSPlayer(g, 20)
     # p2 = GUIPlayer(2, g.gui)
     # p2 = RandomPlayer()
     g.play(p1, p2)

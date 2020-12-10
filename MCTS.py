@@ -7,7 +7,7 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 
-class TreeNode(TreeNode):
+class TreeNodeStructure(TreeNode):
 
     def __init__(self, board_state, gameend=None):
 
@@ -151,7 +151,7 @@ class MCTS(MCTSBase):
         :return: a new tree node
         '''
 
-        new_node = TreeNode(standardState, gameend=game_end)
+        new_node = TreeNodeStructure(standardState, gameend=game_end)
         pi, v = self.model.predict(new_node.board_state)
         new_node._value = v
         new_node.policy_values = pi
